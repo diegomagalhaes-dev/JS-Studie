@@ -1,3 +1,5 @@
+// -->> Rodar os exemplos no console do node
+
 JSON.stringify(10);
 JSON.stringify("Pthon Lang");
 JSON.stringify(true);
