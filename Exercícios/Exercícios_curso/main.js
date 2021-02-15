@@ -10,7 +10,7 @@ columns = columns.split(", ");
 const database = {
     tables: {
         [tableName]: {
-            columns: {}, 
+            columns: {},
             data: []
         }
     }
