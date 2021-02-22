@@ -2,9 +2,10 @@
 const Person = function (name, city, year) {
     this.name = name;
     this.city = city;
-    this.year = year;
+    this.year = year; 
 };
 
+// -->> Utilização da propriedade "prototype", que permite compartilhar propriedades entre os objetos criados a partir da função
 Person.prototype.getAge = function () {
     return (new Date()).getFullYear() - this.year;
 };
