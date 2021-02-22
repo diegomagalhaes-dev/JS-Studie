@@ -3,7 +3,7 @@ const _new = function (fn, ...params) {
     // --> Como o new serve para criar objetos, fazemos isso no nosso algorítimo  
     const obj = {};
     Object.setPrototypeOf(obj, fn.prototype);
-    // --> Como os parâmetros são dinâmicos (...params), devomos usar o apply
+    // --> Como os parâmetros são dinâmicos (...params), devemos usar o apply
     fn.apply(obj, params);
     return obj;
 };
