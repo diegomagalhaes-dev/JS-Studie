@@ -13,7 +13,7 @@ const database = {
     createTable(statement) {
         const regExp = /create table ([a-z]+) \((.+)\)/;
         const parsedStatement = statement.match(regExp);
-        let [,tableName, columns] = parsedStatement;
+        let [, tableName, columns] = parsedStatement;
         this.tables[tableName] = {
             columns: {},
             data: []
@@ -39,12 +39,36 @@ const database = {
         }
         this.tables[tableName].data.push(row);
     },
+    select(statement) {
+        const regexp = /select (.+) from ([a-z]+)(?: where (.+))?/;
+        const parsedStatement = statement.match(regexp);
+        let [, columns, tableName, whereClause] = parsedStatement;
+        columns = columns.split(", ");
+        let rows = this.tables[tableName].data;
+        if (whereClause) {
+            const [columnWhere, valueWhere] = whereClause.split(" = ");
+            rows = rows.filter(function (row) {
+                return row[columnWhere] === valueWhere;
+            });
+        }
+        rows = rows.map(row => {
+            let selectedRow = {};
+            columns.forEach(column => {
+                selectedRow[column] = row[column];
+            });
+            return selectedRow;
+        });
+        return rows;
+    },
     execute(statement) {
         if (statement.startsWith("create table")) {
             return this.createTable(statement);
         }
         if (statement.startsWith("insert")) {
             return this.insert(statement);
+        }
+        if (statement.startsWith("select")) {
+            return this.select(statement);
         }
         const message = `Syntax error: "${statement}"`;
         throw new DatabaseError(statement, message)
@@ -55,7 +79,8 @@ try {
     database.execute("insert into author (id, name, age) values (1, DouglasCrockford, 62)");
     database.execute("insert into author (id, name, age) values (2, Linus Torvalds, 47)");
     database.execute("insert into author (id, name, age) values (3, Martin Fowler, 54)");
-    console.log(JSON.stringify(database, undefined, " "));
+    console.log(JSON.stringify(database.execute("select name, age from author"), undefined, " "));
+    console.log(JSON.stringify(database.execute("select name, age from author where id = 1"), undefined, " "));
 } catch (error) {
     console.log(error.message);
 }
