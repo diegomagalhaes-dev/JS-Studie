@@ -1,4 +1,4 @@
-// Podemos concatenar e usar juntas as hof
+// Podemos concatenar e usar juntas as HoF
 const topBrazilMovies = [
     { title: 'Vingadores Ultimato', peopleAmount: 19_686_119, distributedBy: 'Disney' },
     { title: 'Titanic', peopleAmount: 17_050_000, distributedBy: 'Paramount / 20th Century' },
