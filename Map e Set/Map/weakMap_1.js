@@ -14,6 +14,7 @@ console.log(wn1.get(obj1));
 console.log(wn1.get(obj2));
 
 wn1.delete(obj1);
+console.log(wn1.has(obj1));
 console.log(wn1.get(obj1));
 console.log(wn1.get(obj2));
 
