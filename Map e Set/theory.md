@@ -1,4 +1,4 @@
-# Map
+# Map 🔍 
 O map é um objeto que armazena um conjunto de **chaves** e **valores** que podem ser de qualquer tipo de dado. 
 ### Operações:
 - **size:** retorna a qtd de elementos
@@ -8,10 +8,10 @@ O map é um objeto que armazena um conjunto de **chaves** e **valores** que pode
 - **get:** retorna o valor de uma determinada chave
 - **delete:** remove um par de chave e valor
 - **clear:** remove todos os elementos
-### Map vs Object:
+### 💡 Map vs Object:
 A principal diferença entres os Map's e os Object's é que, enquanto os Object's aceitam keys apenas do tipo String, nos Map's elas podem ser de outros tipos.
 
-# WeakMap
+# WeakMap 🔍 
 O WeakMap é um objeto, similar ao Map, que **permite apenas chaves do tipo Object**, e mantém as referências de forma _fraca_, sendo volátil e **não iterável**.
 ### Utilidade:
 Por aceitar apenas chaves do tipo Object, as coleções do tipo WeakMap tem referência fraca: no momento em que os objetos da coleção deixam de ser referenciados, eles se tornam elegíveis para o Garbage Colletor, sem que tenhamos que nos preocupar em tirá-los da memória.  
@@ -21,7 +21,7 @@ Por aceitar apenas chaves do tipo Object, as coleções do tipo WeakMap tem refe
 - **get:** retorna o valor de uma determinada chave
 - **delete:** remove um par de chave e valor 
 
-# Set
+# Set 🔍 
 Um Set é um objeto que armazena *elementos* únicos, que podem ser de qualquer tipo de dado.
 ### Operações: 
 - **size:** retorna a qtd de elementos
@@ -34,7 +34,7 @@ Um Set é um objeto que armazena *elementos* únicos, que podem ser de qualquer 
 ### Set vs Arrays
 A principal diferença é que as estruturas do tipo Set não permitem *elementos duplicados*.
 
-# WeakSet
+# WeakSet 🔍 
 O weakset é um objeto, similar ao Set, que *permite apenas valores do tipo Object* e mantém as referências de forma fraca, sendo volátil e *não iterável*. 
 ### Utilidade:
 Por aceitar apenas valores do tipo Object, as coleções do tipo WeakSet tem referência fraca: no momento em que os objetos da coleção deixam de ser referenciados, eles se tornam elegíveis para o Garbage Colletor, sem que tenhamos que nos preocupar em tirá-los da memória.  
