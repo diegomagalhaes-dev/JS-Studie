@@ -10,7 +10,7 @@ const _instanceOf = function (obj, fn) {
     // => Caso obj seja igual fn.prototype significa que ele foi criado a partir de fn
     if (obj === fn.prototype) return true;
     if (obj === null) return false;
-    // => Chamada recursiva, para que a função seja invocada até a "raiz" da cadeia de protótipos: 
+    // => Chamada recursiva, para que a função seja invocada até a "raiz" da cadeia de protótipos (prototype chain): 
     return _instanceOf(obj.__proto__, fn);
 }
 
