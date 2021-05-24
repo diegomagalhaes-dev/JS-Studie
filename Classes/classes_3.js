@@ -19,7 +19,7 @@ class OutherClass extends MyClass {
 
 const obj1 = new OutherClass();
 
-console.log(obj1.method1, obj1.method2, obj1.outherMethod); // --> Usando herança é possível obter o resultado desejado (problema de acoplamento)
+console.log(obj1.method1, obj1.method2, obj1.outherMethod); // --> Usando herança não é possível obter o resultado desejado (problema de acoplamento)
 
 // -> Usando a abordagem de objetos literais
 const method01 = {
@@ -42,7 +42,7 @@ const outherMethod = {
 
 const instance = { ...method01, ...method02 };
 
-console.log(instance.method01, instance.method02); // -> Retorna pois eles COMPÕEM o objeto instance
+console.log(instance.method01, instance.method02); // -> Retorna, pois eles COMPÕEM o objeto instance
 
 console.log(instance.outherMethod()); //-> ERROR: outherMethod() não faz parte do objeto instance
 
