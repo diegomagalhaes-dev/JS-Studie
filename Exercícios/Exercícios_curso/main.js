@@ -5,14 +5,31 @@ const DatabaseError = function (statement, message) {
 }
 // Part I
 
+const Parser = function () {
+    const commands = new Map();
+    commands.set("create table", /create table ([a-z]+) \((.+)\)/);
+    commands.set("insert", /insert into ([a-z]+) \((.+)\) values \((.+)\)/);
+    commands.set("select", /select (.+) from ([a-z]+)(?: where (.+))?/);
+    commands.set("delete", /delete from ([a-z]+)(?: where (.+))?/);
 
+    this.parse = function (statement) {
+        for (let [command, regexp] of commands) {
+            const parsedStatement = statement.match(regexp);
+            if (parsedStatement) {
+                return {
+                    command,
+                    parsedStatement
+                }
+            }
+        }
+    };
+};
 // Part II
 const database = {
     tables: {},
+    parser: new Parser(),
     // => Criação de um método através da "method notation", sem a verbosidade de "createTable: function (){}"
-    createTable(statement) {
-        const regExp = /create table ([a-z]+) \((.+)\)/;
-        const parsedStatement = statement.match(regExp);
+    createTable(parsedStatement) {
         let [, tableName, columns] = parsedStatement;
         this.tables[tableName] = {
             columns: {},
@@ -25,9 +42,7 @@ const database = {
             this.tables[tableName].columns[name] = type;
         }
     },
-    insert(statement) {
-        const regexp = /insert into ([a-z]+) \((.+)\) values \((.+)\)/;
-        const parsedStatement = statement.match(regexp);
+    insert(parsedStatement) {
         let [, tableName, columns, values] = parsedStatement;
         columns = columns.split(", ");
         values = values.split(", ");
@@ -39,9 +54,7 @@ const database = {
         }
         this.tables[tableName].data.push(row);
     },
-    select(statement) {
-        const regexp = /select (.+) from ([a-z]+)(?: where (.+))?/;
-        const parsedStatement = statement.match(regexp);
+    select(parsedStatement) {
         let [, columns, tableName, whereClause] = parsedStatement;
         columns = columns.split(", ");
         let rows = this.tables[tableName].data;
@@ -53,16 +66,14 @@ const database = {
         }
         rows = rows.map(row => {
             let selectedRow = {};
-            columns.forEach(column => {
+            columns.forEach(function (column) {
                 selectedRow[column] = row[column];
             });
             return selectedRow;
         });
         return rows;
     },
-    delete(statement) {
-        const regexp = /delete from ([a-z]+)(?: where (.+))?/;
-        const parsedStatement = statement.match(regexp);
+    delete(parsedStatement) {
         let [, tableName, whereClause] = parsedStatement;
         if (whereClause) {
             let [columnWhere, valueWhere] = whereClause.split(" = ");
@@ -74,17 +85,9 @@ const database = {
         }
     },
     execute(statement) {
-        if (statement.startsWith("create table")) {
-            return this.createTable(statement);
-        }
-        if (statement.startsWith("insert")) {
-            return this.insert(statement);
-        }
-        if (statement.startsWith("select")) {
-            return this.select(statement);
-        }
-        if (statement.startsWith("delete")) {
-            return this.delete(statement);
+        const result = this.parser.parse(statement);
+        if (result) {
+            return this[result.command](result.parsedStatement);
         }
         const message = `Syntax error: "${statement}"`;
         throw new DatabaseError(statement, message)
@@ -95,7 +98,7 @@ try {
     database.execute("insert into author (id, name, age) values (1, DouglasCrockford, 62)");
     database.execute("insert into author (id, name, age) values (2, Linus Torvalds, 47)");
     database.execute("insert into author (id, name, age) values (3, Martin Fowler, 54)");
-    database.execute("delete from author");
+    database.execute("delete from author where id = 2");
     console.log(JSON.stringify(database.execute("select name, age from author"), undefined, " "));
 } catch (error) {
     console.log(error.message);
