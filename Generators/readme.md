@@ -26,6 +26,6 @@ O métoro *throw* retorna um erro na execução do generator, e pode ser encadea
 
 **Criar Iterações** 
 <br>
-Utilizando os generators, é possível criar iterações através do protocolo *Iterable* de maneira mais simples e direta ([veja o exemplo](google.com)).
+Utilizando os generators, é possível criar iterações através do protocolo *Iterable* de maneira mais simples e direta ([veja o exemplo](https://github.com/diegomagalhaes-dev/JS-Studie/blob/master/Generators/generators_2.js)).
 <br><br>
 **Sincronizar chamadas assíncronas**
