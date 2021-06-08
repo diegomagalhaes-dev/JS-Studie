@@ -1,0 +1,27 @@
+// cache para as áreas
+const areas = new WeakMap();
+
+const rectangle1 = {
+    x: 10,
+    y: 2
+};
+const rectangle2 = {
+    x: 3,
+    y: 5
+};
+
+function calculateArea(rectangle) {
+    if (areas.has(rectangle)) {
+        console.log("Using cache...");
+        return areas.get(rectangle);
+    }
+    const area = rectangle.x * rectangle.y;
+    areas.set(rectangle, area);
+    return area;
+}
+
+console.log(calculateArea(rectangle1));
+console.log(calculateArea(rectangle2));
+console.log(areas.has(rectangle2));
+console.log(calculateArea(rectangle2));
+console.log(calculateArea(rectangle1));
