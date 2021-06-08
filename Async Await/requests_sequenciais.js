@@ -9,7 +9,9 @@ const getData = async () => {
 
     const datas = await Promise.all([data1, data2, data3]);
 
-    console.log(datas)
+    console.log(datas[0].status)
+    console.log(datas[1].status)
+    console.log(datas[2].status)
 }
 
 getData();
