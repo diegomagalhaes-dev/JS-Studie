@@ -1,5 +1,5 @@
 # Proxy em Java Script 🔍
-➡️ O `proxy` é capaz de **interceptar** um objeto alvo, realizando diversas operações nele.  
+➡️ As `proxy's` são capazes de **interceptar** um objeto alvo, realizando diversas operações nele. <br> Sempre que, por exemplo, alteramos algo em uma função proxy, podemos colocar alguma IF para que altere também na sua `target`, com base na condição especificada. Isso permite um controle mais reativo do código, podendo ser aplicado em diversos contextos. <br>Por exemplo, um valor, antes de ser enviado para o banco de dados, deve ser colocado em uma máscara.
 
 ## Traps
 ➔ Os traps são métodos para diversos tipos de eventos relacionados a um objeto. Exemplos:
