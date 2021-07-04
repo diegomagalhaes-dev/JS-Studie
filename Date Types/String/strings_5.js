@@ -21,15 +21,15 @@ String.fromCharCode(74);
 
 "C++".match(/\+/g);
 "Java".search(/a/);
-"Leandro Espetaria".replace("Leandro", "Neguin");
+"Leandro Espetaria".replace("Leandro", "LL");
 "Leandro Espetaria".replace(/a/g, 4);
 
 "JavaScript".slice(0, 4);
 "Leandro Espetos".slice(8);
-"GordoPC".slice(0, -4);
-"Espetaria Afro".slice(-6);
+"Sun microsystems".slice(0, -4);
+"Espetaria Leo".slice(-6);
 
-"Gordo; Baleia; Gordola; Gordaça".split(";");
+"Java; PHP; JavaScript; C#".split(";");
 
 "Leandro".concat("Espetaria");
 "Java".padStart(10, "Script");

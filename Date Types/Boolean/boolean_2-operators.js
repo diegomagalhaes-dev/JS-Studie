@@ -1,3 +1,7 @@
+/*
+    ==== EXECUTAR TODOS OS COMANDOS NO CONSOLE DO NODE
+*/
+
 1 == 2;
 10 === 10;
 'a' != 'b';

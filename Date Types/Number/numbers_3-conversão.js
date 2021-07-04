@@ -20,7 +20,7 @@ Number("JavaScript");
 "10" * 1;
 "10" / 1;
 
-// toString (o método toString de um número permite convertêlo para qualquer sistema de numeração, bastando indicar qual a base desejada)
+// toString (o método toString de um número permite converte-lo para qualquer sistema de numeração, bastando indicar qual a base desejada)
 (0xA).toString(10);
 (0b1010).toString(16);
 (010).toString(2);
