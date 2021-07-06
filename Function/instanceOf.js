@@ -1,3 +1,5 @@
+// operador instanceOf para verificar a cadeia de prototipos (prototype chain) de um objeto
+
 const date = new Date();
 
 console.log(date instanceof Date); // true pois date decende de Date()

@@ -11,7 +11,6 @@ const calculateArea = function (fn) {
 
 const circle = {
     radius: 10,
-    calculateArea
 };
 // -->> O bind encapsula o this (circle) dentro da função calculateArea
 const calculateAreaForCircle = calculateArea.bind(circle);

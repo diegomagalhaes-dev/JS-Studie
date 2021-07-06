@@ -1,3 +1,5 @@
+// Um pouco sobre o This
+
 const rectangle = {
     x: 10,
     y: 15,

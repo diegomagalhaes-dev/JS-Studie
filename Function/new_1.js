@@ -1,3 +1,5 @@
+// prototype: a herança em Java Script é baseada em protótipos
+
 const personPrototype = {
     getAge() {
         return (new Date()).getFullYear() - this.year;

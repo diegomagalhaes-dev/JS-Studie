@@ -26,11 +26,13 @@ console.log(personArrow.getAge()); // NaN, pois o this de "year" não pode ser p
 const sum = function () {
     let total = 0;
     for (let argument in arguments) {
+        console.log(arguments[argument])
         total += arguments[argument];
     }
     return total;
 };
 console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, 9));
+// O objeto arguments é como um objeto Array correspondendo aos argumentos passados para uma função.
 
 // -->> Agora com Arrow Function
 const sumArrow = () => {
@@ -40,4 +42,4 @@ const sumArrow = () => {
     }
     return total;
 };
-console.log(sumArrow(1, 2, 3, 4, 5, 6, 7, 8, 9)); // Imprime os arguments do módulo do node, pois não conseguiu criar os proprios arguments, assim como ocorreu em This
+console.log(sumArrow(1, 2, 3, 4, 5, 6, 7, 8, 9)); // Imprime os arguments do módulo do node, pois não conseguiu criar os proprios arguments, assim como ocorreu em This 

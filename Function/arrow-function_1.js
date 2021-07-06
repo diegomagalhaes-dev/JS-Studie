@@ -15,7 +15,7 @@ const calculatorLiteral = function (fn) {
 console.log(calculatorLiteral(sumLiteral)(1, 5));
 console.log(calculatorLiteral(subLiteral)(10, 2));
 
-// Declaração com Arrow function (I)
+// Declaração com Arrow function 
 const sumArrowI = (a, b) => {
     return a + b;
 };
@@ -33,7 +33,7 @@ const calculatorArrowI = (fn) => {
 console.log(calculatorArrowI(sumArrowI)(1, 5));
 console.log(calculatorArrowI(subArrowI)(10, 2));
 
-// Declaração com Arrow function (II)
+// Declaração com Arrow function (forma reduzida)
 const sumArrowII = (a, b) => a + b;
 
 const subArrowII = (a, b) => a - b;

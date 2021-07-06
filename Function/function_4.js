@@ -1,3 +1,5 @@
+// Getters e Setters 
+
 const rectangule = {
     set tam(x) {
         this.x = x;

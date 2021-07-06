@@ -1,3 +1,5 @@
+// Retornando objetos em arrow functions
+
 const createPerson = function (name, city, year) {
     return {
         name,

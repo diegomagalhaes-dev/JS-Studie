@@ -1,3 +1,5 @@
+// Call e Apply 
+
 const calculateArea = function () {
     return Math.PI * Math.pow(this.radius, 2);
 };

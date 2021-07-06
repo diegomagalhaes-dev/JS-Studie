@@ -1,3 +1,5 @@
+// "simulando" o algorítmo do operador New 
+
 // -->> Algorítimo que simula o funcionamento do new 
 const _new = function (fn, ...params) {
     // --> Como o new serve para criar objetos, fazemos isso no nosso algorítimo  
@@ -20,7 +22,7 @@ Person.prototype.getAge = function () {
     return (new Date()).getFullYear() - this.year;
 };
 
-// -->> O nosso algorítimo é apenas uma simulação do new, que invocaria a função construra usando "new FuncaoConstrutora". No nosso caso iremos passar a função construtora como parâmetro em new
+// -->> O nosso algorítimo é apenas uma simulação do new, que invocaria a função construtora usando "new FuncaoConstrutora". No nosso caso, iremos passar a função construtora como parâmetro em new
 const person1 = _new(Person, "Leandro Pereira", "Tianguá", 2002);
 const person2 = _new(Person, "Linus Torvald", "Helsinki", 1969);
 
