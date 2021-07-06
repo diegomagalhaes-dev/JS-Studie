@@ -1,6 +1,6 @@
 const book = {
     title: "Clean Architecture",
-    author: "Robert C. Mathin",
+    author: "Robert C. Martin",
     pages: 320,
     language: "en",
     available: true

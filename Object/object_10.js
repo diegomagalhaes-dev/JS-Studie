@@ -1,6 +1,8 @@
+// "Clonando" objeto, exemplo: 
+
 const book = {
     title: "Clean Architecture",
-    author: "Robert C. Marthin",
+    author: "Robert C. Martin",
     pages: 320,
     language: "en",
     available: true

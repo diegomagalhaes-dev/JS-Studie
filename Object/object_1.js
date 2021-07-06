@@ -8,4 +8,4 @@
 new Object();
 
 // --> Object API
-Object.create(null);
+Object.create({});

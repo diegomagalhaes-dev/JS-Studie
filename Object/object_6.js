@@ -7,6 +7,7 @@ const book = {
 };
 
 delete book.available;
-//delete book["available"];
+delete book["language"];
 console.log(book);
 console.log("available" in book);
+console.log("language" in book);

@@ -1,3 +1,5 @@
+// Comparando Objetos 
+
 const book1 = {
     title: "Clean Architecture",
     author: "Robert C. Martin",
@@ -24,3 +26,4 @@ for (let key in book2) {
 }
 
 console.log(equal);
+

@@ -5,7 +5,7 @@ const book = {};
 // const book = new Object();
 
 book.title = "Clean Architecture";
-book.author = "Robert C. Mathin";
+book.author = "Robert C. Martin";
 book.pages = 320;
 book.language = "en";
 book.available = true;

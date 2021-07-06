@@ -13,14 +13,15 @@ const dartLang = Object.create(languageParadigm);
 dartLang.name = "Dart";
 dartLang.year = 2015;
 
-// --> shadowing: quando uma mesma propriedade existe no objeto e em seu protótipo, a do objeto se sobrepõe sombreando o protótipo
+// --> shadowing: quando uma mesma propriedade existe no objeto e em seu protótipo, a do objeto se sobrepõe "ofuscando" o protótipo ...
 dartLang.paradigm = "Orientado a Objetos e Funcional";
 
-// --> No entanto, a propriedade existe no protótipo não deixa de existir, sendo possível acessá-la buscando pelo nome da propriedade linkada ao protótipo do objeto:
+// ...no entanto, a propriedade existente no protótipo não deixa de existir, sendo possível acessá-la buscando pelo nome da propriedade linkada ao protótipo do objeto:
 console.log(Object.getPrototypeOf(dartLang));
 console.log(dartLang.__proto__.paradigm);
 
 
+// hasOwnProperty vai retornar true quando o objeto possui uma propriedade com o nome especificado (nota: não é true caso essa propriedade seja de herança prototípica )
 const javascript = {
     name: "JavaScript",
     year: 1995,
@@ -39,3 +40,4 @@ for (let key in dartLang) {
 for (let key in python) {
     console.log(python[key], python.hasOwnProperty(key));
 }
+
