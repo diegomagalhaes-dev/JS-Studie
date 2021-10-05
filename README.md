@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img  style="max-width:150px; width: 100%" alt="GoBarber API" src="./Assets/javascript.png" />
+    <img  style="max-width:50px" alt="GoBarber API" src="./Assets/javascript.png" />
     <br>
     ES5 | ES6 | ES7 | ES8
 </h1>
